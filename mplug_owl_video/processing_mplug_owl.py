@@ -79,7 +79,7 @@ class MplugOwlProcessor(ProcessorMixin):
         elif images is not None:
             return BatchEncoding(data=dict(**image_features), tensor_type=return_tensors)
         else:
-            return BatchEncoding(data=dict(video_pixel_values=video_pixel_values), tensor_type=return_tensors)
+            return BatchEncoding(data=dict(video_pixel_values=video_feature), tensor_type=return_tensors)
 
     def batch_decode(self, skip_special_tokens=True, *args, **kwargs):
         """

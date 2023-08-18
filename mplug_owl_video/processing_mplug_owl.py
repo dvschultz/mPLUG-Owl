@@ -42,8 +42,8 @@ class MplugOwlProcessor(ProcessorMixin):
         self.add_BOS = True
 
     def __call__(self, text=None, images=None, videos=None, num_frames=4, return_tensors=None, **kwargs):
-        if text is None and images is None:
-            raise ValueError("You have to specify either text or images. Both cannot be none.")
+        if text is None and images is None and videos is None:
+            raise ValueError("You have to specify either text or images or video. All three cannot be none.")
 
         if text is not None:
             encoding = tokenize_prompts(
